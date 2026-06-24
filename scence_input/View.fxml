@@ -19,7 +19,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="88.0" layoutY="85.0" />
-      <Button layoutX="139.0" layoutY="136.0" mnemonicParsing="false" text="Save" />
+      <TextField fx:id="Text_field" layoutX="88.0" layoutY="85.0" />
+      <Button layoutX="139.0" layoutY="136.0" mnemonicParsing="false" onAction="#On_save" text="Save" />
    </children>
 </Pane>

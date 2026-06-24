@@ -24,7 +24,7 @@ public class Controller {
     private Label Status;
 
     @FXML
-    private ListView<?> list_view;
+    private ListView<String> list_view;
 
     @FXML
     void On_Create(ActionEvent event) {
@@ -32,7 +32,7 @@ public class Controller {
     }
 
     @FXML
-    void On_Read(ActionEvent event) {
+    void On_Read(ActionEvent event) throws IOException {
         var stage = (Stage) Status.getScene().getWindow();
         var file_chooser = new FileChooser();
         var selected = file_chooser.showOpenDialog(stage);
