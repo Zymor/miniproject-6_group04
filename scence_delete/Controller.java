@@ -2,6 +2,8 @@ package scence_delete;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import global.Global;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,6 +39,9 @@ public class Controller {
 
     @FXML
     void On_yes(ActionEvent event) throws Exception {
+
+        Global.list.remove(Global.selected_item);
+
         var node = (Node) event.getSource();
         var stage = (Stage) node.getScene().getWindow();
 

@@ -68,6 +68,14 @@ public class Controller {
     @FXML
     void On_delete(ActionEvent event) throws IOException {
 
+        String selected_item = list_view.getSelectionModel().getSelectedItem();
+        if(selected_item == null){
+            System.out.println("No item selected");
+            return;
+        }
+        Global.selected_item = selected_item;
+    
+
         var node = (Node) event.getSource();
         var stage = (Stage) node.getScene().getWindow();
 
@@ -87,6 +95,15 @@ public class Controller {
 
     @FXML
     void On_update(ActionEvent event) throws IOException {
+
+
+        String selected_item = list_view.getSelectionModel().getSelectedItem();
+        if(selected_item == null){
+            System.out.println("No item selected");
+            return;
+        }
+        Global.selected_item = selected_item;
+
          var node = (Node) event.getSource();
         var stage = (Stage) node.getScene().getWindow();
 

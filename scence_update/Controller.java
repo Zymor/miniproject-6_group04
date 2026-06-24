@@ -2,6 +2,8 @@ package scence_update;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import global.Global;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,6 +43,8 @@ public class Controller {
 
     @FXML
     void initialize() {
+        var selected = Global.list.indexOf(Global.selected_item);
+        Text_field.setText(Global.list.get(selected));
 
     }
 
