@@ -2,6 +2,8 @@ package scence_input;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import global.Global;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +26,16 @@ public class Controller {
     @FXML
     void On_save(ActionEvent event) throws Exception {
 
+        //obtain data from text field
+
+        var data = Text_field.getText();
+
+        Global.list.add(data);
+
+
+
+
+// switch to scence_main
         var node = (Node) event.getSource();
         var stage = (Stage) node.getScene().getWindow();
 

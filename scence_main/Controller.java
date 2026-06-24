@@ -5,6 +5,8 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import global.Global;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,7 +59,10 @@ public class Controller {
         for (var line : Files.readAllLines(selected.toPath())) {
             data.add(line);
         }
-        list_view.getItems().addAll(data);
+// buisiness logic
+        Global.list = data;
+
+        list_view.getItems().addAll(Global.list);
     }
 
     @FXML
@@ -101,7 +106,9 @@ public class Controller {
 
     @FXML
     void initialize() {
-        
+
+        list_view.getItems().addAll(Global.list);
+
     }
 
 }
