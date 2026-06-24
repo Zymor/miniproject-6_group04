@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
@@ -28,15 +30,21 @@ public class Controller {
     private ListView<String> list_view;
 
     @FXML
-    void On_Create(ActionEvent event) {
+    void On_Create(ActionEvent event) throws IOException{
         var stage = (Stage) Status.getScene().getWindow();
 
-        var view_input = getClass().getResource("./scence_input/View.fxml");
+        var view_input = getClass().getResource("../scence_input/View.fxml");
         var controller_input = new scence_input.Controller();
 
         var loader = new FXMLLoader(view_input);
         loader.setController(controller_input);
         loader.setLocation(view_input);
+
+        var scene = new Scene(loader.load());
+
+        stage.setScene(scene);
+        stage.show();
+
     }
 
     @FXML
@@ -53,12 +61,41 @@ public class Controller {
     }
 
     @FXML
-    void On_delete(ActionEvent event) {
+    void On_delete(ActionEvent event) throws IOException {
+
+        var node = (Node) event.getSource();
+        var stage = (Stage) node.getScene().getWindow();
+
+        var view_delete = getClass().getResource("../scence_delete/View.fxml");
+        var controller_delete = new scence_delete.Controller();
+
+        var loader = new FXMLLoader(view_delete);
+        loader.setController(controller_delete);
+        loader.setLocation(view_delete);
+
+        var scene = new Scene(loader.load());
+
+        stage.setScene(scene);
+        stage.show();
 
     }
 
     @FXML
-    void On_update(ActionEvent event) {
+    void On_update(ActionEvent event) throws IOException {
+         var node = (Node) event.getSource();
+        var stage = (Stage) node.getScene().getWindow();
+
+        var view_update = getClass().getResource("../scence_update/View.fxml");
+        var controller_update = new scence_update.Controller();
+
+        var loader = new FXMLLoader(view_update);
+        loader.setController(controller_update);
+        loader.setLocation(view_update);
+
+        var scene = new Scene(loader.load());
+
+        stage.setScene(scene);
+        stage.show();
 
     }
 
