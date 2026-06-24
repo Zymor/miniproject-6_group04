@@ -24,7 +24,6 @@ public class Controller {
 
     @FXML
     void initialize() {
-        assert Text_field != null : "fx:id=\"Text_field\" was not injected: check your FXML file 'View.fxml'.";
 
     }
 

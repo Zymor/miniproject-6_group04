@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
@@ -28,7 +29,14 @@ public class Controller {
 
     @FXML
     void On_Create(ActionEvent event) {
+        var stage = (Stage) Status.getScene().getWindow();
 
+        var view_input = getClass().getResource("./scence_input/View.fxml");
+        var controller_input = new scence_input.Controller();
+
+        var loader = new FXMLLoader(view_input);
+        loader.setController(controller_input);
+        loader.setLocation(view_input);
     }
 
     @FXML
